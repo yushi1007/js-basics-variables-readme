@@ -2,7 +2,8 @@
 
 ## Problem Statement
 
-In this lesson, we'll introduce JavaScript variables and explain how to declare, assign, and access them.
+In this lesson, we'll introduce JavaScript variables and explain how to declare,
+assign, and access them.
 
 ## Objectives
 
@@ -15,17 +16,16 @@ In this lesson, we'll introduce JavaScript variables and explain how to declare,
 
 A variable is a container in which we can store values for later retrieval.
 
-Imagine a box that can hold any type of data: a number, string, boolean, object
-— even an `undefined`. We take some data that we want to store, place it inside
-the box, and hand the box off to the JavaScript engine, which stores it in
-memory. All done! Our data is safely stored until we need to access it again.
+Imagine a box that can hold any type of data: a number, string, true/false,
+object — even an `undefined`. We take some data that we want to store, place it
+inside the box, and hand the box off to JavaScript, which stores it in memory.
+All done! Our data is safely stored until we need to access it again.
 
 ![Raiders of the Lost Ark warehouse](https://user-images.githubusercontent.com/17556281/28639657-fea1930a-7216-11e7-8c38-45bc9fab96a7.gif)
 
-But wait! When we ask for the data back, how will the JavaScript engine know
-_which_ box to retrieve? We need to assign a name to our variable — a label for
-our box — so that we can tell the engine exactly which piece of stored data we
-want to access.
+But wait! When we ask for the data back, how will JavaScript know _which_ box to
+retrieve? We need to assign a name to our variable — a label for our box — so
+that we can tell the engine exactly which piece of stored data we want.
 
 ## Name Variables in JavaScript
 
@@ -33,7 +33,7 @@ Variable names in JavaScript can sometimes be complicated, but if you follow
 these three rules you'll be fine:
 
 - Start every variable name with a lowercase letter. Variable names starting with a number are not valid.
-- Don't use spaces — `camelCaseYourVariableNames` instead of `snake_casing_them`.
+- Don't use spaces — `camelCaseYourVariableNames` (see the camel humps?) instead of `snake_casing_them` (like the underscore is a snake that swallowed the words).
 - Don't use JavaScript [reserved words][reserved words] or [future reserved words][future reserved words].
 
 It's important to note that case matters, so `javaScript`, `javascript`,
@@ -41,20 +41,20 @@ It's important to note that case matters, so `javaScript`, `javascript`,
 
 ## Initialize Variables in JavaScript
 
-The `var` reserved word is the classic way to declare a variable. It's been
-around since the inception of JavaScript, and it's what you will encounter in
-any pre-ES2015 code.
+The word `var` is a special word in JavaScript. It means that the word that
+comes next is a _variable name_, an identifier for a box that we will put data
+in. It was the _first_ way to declare a variable. For most JavaScript written
+before 2015, only `var` is used for variables.
 
-Creating new variables in JavaScript is a two-step process. First, we declare
-the variable...
+Now, let's use `var`.
 
 ```js
 var pi;
 //=> undefined
 ```
 
-...and the JavaScript engine sets aside a chunk of memory to store the declared
-...variable. Then, we assign a value to that variable:
+...and JavaScript sets aside a chunk of memory to store the declared variable.
+Then, we assign a value to that variable:
 
 ```js
 pi = 3.14159;
@@ -62,7 +62,13 @@ pi = 3.14159;
 ```
 
 We can package both of the initialization steps — declaration and assignment —
-in a single line of code: ```js var pi = 3.14159; //=> undefined ```
+in a single line of code:
+
+```js 
+var pi = 3.14159; //=> undefined
+```
+
+Both of these methods are commonly used, so you could see and/or use either one.
 
 To retrieve a declared variable, simply refer to its name:
 
@@ -75,8 +81,8 @@ pi;
 
 Upon declaration, all variables are automatically assigned the value of
 `undefined`. It's only after we assign a new value that the variable will
-contain something other than undefined. We can use the `typeof` operator to
-check the data type of the value currently stored in a variable:
+contain something other than undefined. We can use `typeof` to check the data
+type of the value currently stored in a variable:
 
 ```js
 var language;
@@ -95,11 +101,11 @@ typeof language;
 ***Top Tip***: When writing JavaScript code, it's good practice to ***never*** set a
 variable equal to `undefined`. Variables will be `undefined` until we explicitly
 assign a value, so encountering an `undefined` variable is a strong signal that
-the variable was declared but not assigned prior to the reference. That's
-valuable information that we can use while debugging, and it comes at no
+the variable was declared before being used (or, as programmers say, being "referenced"). That's valuable information that we can use while debugging, and it comes at no
 additional cost to us.
 
-Once a variable has been created with `var`, we can reassign it to our heart's content:
+Once a variable has been created with `var`, we can reassign it to our heart's
+content:
 
 ```js
 var pi = 3.14159;
@@ -135,12 +141,12 @@ language;
 
 Because of its ubiquity in legacy code and StackOverflow posts, it's important
 to get to know `var`. However, as we alluded to earlier, there is almost no
-reason to use `var` in a post-ES2015 world. `var` comes with a ton of baggage in
-the form of scope issues — which we will discuss in the lesson on scope in
-JavaScript — and by allowing developers to play a little too fast and loose with
-variable declarations.
+reason to use `var` with the features JavaScript has post-2015. `var` comes with
+a ton of baggage in the form of scope issues (which we will discuss in the
+lesson on scope in JavaScript) and allows developers to play a little too
+fast and loose with variable declarations.
 
-With `var`, no error is thrown if you declare a variable twice:
+For example, with `var`, no error is thrown if you declare a variable twice:
 
 ```js
 var language = "Ruby";
