@@ -1,5 +1,5 @@
 # JavaScript Variables
-
+#
 ## Problem Statement
 
 In this lesson, we'll introduce JavaScript variables and explain how to declare,
